@@ -22,7 +22,7 @@ tp findmax(tp x);
 int main()
 {
 	
-	int daa;
+	int da;
 	int choice = 1;
 	while (choice)
 	{
