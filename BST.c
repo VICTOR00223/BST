@@ -22,7 +22,7 @@ tp findmax(tp x);
 int main()
 {
 	
-	int da;
+	int daa;
 	int choice = 1;
 	while (choice)
 	{
@@ -202,9 +202,9 @@ void insert2(tp *x, tp *y)
 void delete(tp *x, int data)
 {
 	printf("\nx is pointig %d", (*x)->key);
-	if((*x == root) && ((*x)->key == data))//Èåëù íá äéáãñáøù ôç ñßæá
+	if((*x == root) && ((*x)->key == data))//ÄŒÄºÃ«Å¯ Ã­Ã¡ Ã¤Ã©Ã¡ÄƒÅ„Ã¡Å™Å¯ Ã´Ã§ Å„ÃŸÄ‡Ã¡
 	{
-		if(((*x)->right == NULL) && ((*x)->left == NULL))//×ùñéò ğáéäéá
+		if(((*x)->right == NULL) && ((*x)->left == NULL))//Ã—Å¯Å„Ã©Åˆ Ä‘Ã¡Ã©Ã¤Ã©Ã¡
 		{
 			printf("\n1D");
 			free(*x);
@@ -212,7 +212,7 @@ void delete(tp *x, int data)
 			printf("\nTree is empty!");
 			return;			
 		}
-		else if(((*x)->right == NULL) && ((*x)->left != NULL))//Ìïíï áñéóôåñü ğáéäé
+		else if(((*x)->right == NULL) && ((*x)->left != NULL))//ÄšÄÃ­Ä Ã¡Å„Ã©Ã³Ã´ÄºÅ„Ã¼ Ä‘Ã¡Ã©Ã¤Ã©
 		{
 			printf("\n2D");
 			tp temp = *x;
@@ -221,7 +221,7 @@ void delete(tp *x, int data)
 			temp = NULL;
 			return;
 		}
-		else if(((*x)->right != NULL) && ((*x)->left == NULL))//Ìïíï äåîé ğáéäé
+		else if(((*x)->right != NULL) && ((*x)->left == NULL))//ÄšÄÃ­Ä Ã¤ÄºÃ®Ã© Ä‘Ã¡Ã©Ã¤Ã©
 		{
 			printf("\n3D");
 			tp temp = *x;
@@ -230,7 +230,7 @@ void delete(tp *x, int data)
 			temp = NULL;
 			return;
 		}
-		else if(((*x)->right != NULL) && ((*x)->left != NULL))//å÷åé 2 ğáéäéá
+		else if(((*x)->right != NULL) && ((*x)->left != NULL))//ÄºÃ·ÄºÃ© 2 Ä‘Ã¡Ã©Ã¤Ã©Ã¡
 		{
 			printf("\n4D");
 			tp right = (*x)->right;
@@ -246,10 +246,10 @@ void delete(tp *x, int data)
 	{ 
 		if(((*x)->key > data) && ((*x)->left!=NULL) && ((*x)->left->key != data))
 			delete(&(*x)->left, data);
-		else if(((*x)->key > data) && ((*x)->left!=NULL) && ((*x)->left->key == data))//Èåëù íá äéáãñáøù ôï áñéóôåñü ğáéäé ôçò ñßæáò
+		else if(((*x)->key > data) && ((*x)->left!=NULL) && ((*x)->left->key == data))//ÄŒÄºÃ«Å¯ Ã­Ã¡ Ã¤Ã©Ã¡ÄƒÅ„Ã¡Å™Å¯ Ã´Ä Ã¡Å„Ã©Ã³Ã´ÄºÅ„Ã¼ Ä‘Ã¡Ã©Ã¤Ã© Ã´Ã§Åˆ Å„ÃŸÄ‡Ã¡Åˆ
 		{
 			tp temp = (*x)->left;
-			if((temp->left == NULL) && (temp->right == NULL))//×ùñéò ğáéäéá
+			if((temp->left == NULL) && (temp->right == NULL))//Ã—Å¯Å„Ã©Åˆ Ä‘Ã¡Ã©Ã¤Ã©Ã¡
 			{
 				printf("\n5D");
 				(*x)->left = NULL;
@@ -257,7 +257,7 @@ void delete(tp *x, int data)
 				temp = NULL;
 				return;
 			}
-			if((temp->left != NULL) && (temp->right == NULL))//Ìïíï áñéóôåñü ğáéäé
+			if((temp->left != NULL) && (temp->right == NULL))//ÄšÄÃ­Ä Ã¡Å„Ã©Ã³Ã´ÄºÅ„Ã¼ Ä‘Ã¡Ã©Ã¤Ã©
 			{
 				printf("\n6D");
 				(*x)->left = temp->left;
@@ -265,7 +265,7 @@ void delete(tp *x, int data)
 				temp = NULL;
 				return;
 			}
-			if((temp->left == NULL) && (temp->right != NULL))//Ìïíï äåîé ğáéäé
+			if((temp->left == NULL) && (temp->right != NULL))//ÄšÄÃ­Ä Ã¤ÄºÃ®Ã© Ä‘Ã¡Ã©Ã¤Ã©
 			{
 				printf("\n7D");
 				(*x)->left = temp->right;
@@ -273,7 +273,7 @@ void delete(tp *x, int data)
 				temp = NULL;
 				return;
 			}
-			if((temp->left != NULL) && (temp->right != NULL))//å÷åé 2 ğáéäéá
+			if((temp->left != NULL) && (temp->right != NULL))//ÄºÃ·ÄºÃ© 2 Ä‘Ã¡Ã©Ã¤Ã©Ã¡
 			{
 				printf("\n8D");
 				tp right = temp->right;
@@ -288,10 +288,10 @@ void delete(tp *x, int data)
 		}
 		else if(((*x)->key < data) && ((*x)->right!=NULL) && ((*x)->right->key != data))
 			delete(&(*x)->right, data);
-		else if(((*x)->key < data) && ((*x)->right!=NULL) && ((*x)->right->key == data))//Èåëù íá äéáãñáøù ôï äåîé ğáéäé ôçò ñßæáò
+		else if(((*x)->key < data) && ((*x)->right!=NULL) && ((*x)->right->key == data))//ÄŒÄºÃ«Å¯ Ã­Ã¡ Ã¤Ã©Ã¡ÄƒÅ„Ã¡Å™Å¯ Ã´Ä Ã¤ÄºÃ®Ã© Ä‘Ã¡Ã©Ã¤Ã© Ã´Ã§Åˆ Å„ÃŸÄ‡Ã¡Åˆ
 		{
 			tp temp = (*x)->right;
-			if((temp->left == NULL) && (temp->right == NULL))//×ùñéò ğáéäéá
+			if((temp->left == NULL) && (temp->right == NULL))//Ã—Å¯Å„Ã©Åˆ Ä‘Ã¡Ã©Ã¤Ã©Ã¡
 			{
 				printf("\n9D");
 				(*x)->right = NULL;
@@ -299,7 +299,7 @@ void delete(tp *x, int data)
 				temp = NULL;
 				return;
 			}
-			if((temp->left != NULL) && (temp->right == NULL))//Ìïíï áñéóôåñü ğáéäé
+			if((temp->left != NULL) && (temp->right == NULL))//ÄšÄÃ­Ä Ã¡Å„Ã©Ã³Ã´ÄºÅ„Ã¼ Ä‘Ã¡Ã©Ã¤Ã©
 			{
 				printf("\n10D");
 				(*x)->right = temp->left;
@@ -307,7 +307,7 @@ void delete(tp *x, int data)
 				temp = NULL;
 				return;
 			}
-			if((temp->left == NULL) && (temp->right != NULL))//Ìïíï äåîé ğáéäé
+			if((temp->left == NULL) && (temp->right != NULL))//ÄšÄÃ­Ä Ã¤ÄºÃ®Ã© Ä‘Ã¡Ã©Ã¤Ã©
 			{
 				printf("\n11D");
 				(*x)->right = temp->right;
@@ -315,7 +315,7 @@ void delete(tp *x, int data)
 				temp = NULL;
 				return;
 			}
-			if((temp->left != NULL) && (temp->right != NULL))//å÷åé 2 ğáéäéá
+			if((temp->left != NULL) && (temp->right != NULL))//ÄºÃ·ÄºÃ© 2 Ä‘Ã¡Ã©Ã¤Ã©Ã¡
 			{
 				printf("\n12D");
 				tp right = temp->right;
@@ -333,10 +333,10 @@ void delete(tp *x, int data)
 	{
 		if(((*x)->key > data) && ((*x)->left!=NULL) && ((*x)->left->key != data))
 			delete(&(*x)->left, data);
-		else if(((*x)->key > data) && ((*x)->left!=NULL) && ((*x)->left->key == data))//Èåëù íá äéáãñáøù ôï áñéóôåñü ğáéäé.
+		else if(((*x)->key > data) && ((*x)->left!=NULL) && ((*x)->left->key == data))//ÄŒÄºÃ«Å¯ Ã­Ã¡ Ã¤Ã©Ã¡ÄƒÅ„Ã¡Å™Å¯ Ã´Ä Ã¡Å„Ã©Ã³Ã´ÄºÅ„Ã¼ Ä‘Ã¡Ã©Ã¤Ã©.
 		{
 			tp temp = (*x)->left;
-			if((temp->left == NULL) && (temp->right == NULL))//×ùñéò ğáéäéá
+			if((temp->left == NULL) && (temp->right == NULL))//Ã—Å¯Å„Ã©Åˆ Ä‘Ã¡Ã©Ã¤Ã©Ã¡
 			{
 				printf("\n13D");
 				(*x)->left = NULL;
@@ -344,7 +344,7 @@ void delete(tp *x, int data)
 				temp = NULL;
 				return;
 			}
-			if((temp->left != NULL) && (temp->right == NULL))//Ìïíï áñéóôåñü ğáéäé
+			if((temp->left != NULL) && (temp->right == NULL))//ÄšÄÃ­Ä Ã¡Å„Ã©Ã³Ã´ÄºÅ„Ã¼ Ä‘Ã¡Ã©Ã¤Ã©
 			{
 				printf("\n14D");
 				(*x)->left = temp->left;
@@ -352,7 +352,7 @@ void delete(tp *x, int data)
 				temp = NULL;
 				return;
 			}
-			if((temp->left == NULL) && (temp->right != NULL))//Ìïíï äåîé ğáéäé
+			if((temp->left == NULL) && (temp->right != NULL))//ÄšÄÃ­Ä Ã¤ÄºÃ®Ã© Ä‘Ã¡Ã©Ã¤Ã©
 			{
 				printf("\n15D");
 				(*x)->left = temp->right;
@@ -360,7 +360,7 @@ void delete(tp *x, int data)
 				temp = NULL;
 				return;
 			}
-			if((temp->left != NULL) && (temp->right != NULL))//å÷åé 2 ğáéäéá
+			if((temp->left != NULL) && (temp->right != NULL))//ÄºÃ·ÄºÃ© 2 Ä‘Ã¡Ã©Ã¤Ã©Ã¡
 			{
 				printf("\n16D");
 				tp right = temp->right;
@@ -375,10 +375,10 @@ void delete(tp *x, int data)
 		}
 		else if(((*x)->key < data) && ((*x)->right!=NULL) && ((*x)->right->key != data))
 			delete(&(*x)->right, data);
-		else if(((*x)->key < data) && ((*x)->right!=NULL) && ((*x)->right->key == data))//Èåëù íá äéáãñáøù ôï äåîß ğáéäé.
+		else if(((*x)->key < data) && ((*x)->right!=NULL) && ((*x)->right->key == data))//ÄŒÄºÃ«Å¯ Ã­Ã¡ Ã¤Ã©Ã¡ÄƒÅ„Ã¡Å™Å¯ Ã´Ä Ã¤ÄºÃ®ÃŸ Ä‘Ã¡Ã©Ã¤Ã©.
 		{
 			tp temp = (*x)->right;
-			if((temp->left == NULL) && (temp->right == NULL))//×ùñéò ğáéäéá
+			if((temp->left == NULL) && (temp->right == NULL))//Ã—Å¯Å„Ã©Åˆ Ä‘Ã¡Ã©Ã¤Ã©Ã¡
 			{
 				printf("\n17D");
 				(*x)->right = NULL;
@@ -386,7 +386,7 @@ void delete(tp *x, int data)
 				temp = NULL;
 				return;
 			}
-			if((temp->left != NULL) && (temp->right == NULL))//Ìïíï áñéóôåñü ğáéäé
+			if((temp->left != NULL) && (temp->right == NULL))//ÄšÄÃ­Ä Ã¡Å„Ã©Ã³Ã´ÄºÅ„Ã¼ Ä‘Ã¡Ã©Ã¤Ã©
 			{
 				printf("\n18D");
 				(*x)->right = temp->left;
@@ -394,7 +394,7 @@ void delete(tp *x, int data)
 				temp = NULL;
 				return;
 			}
-			if((temp->left == NULL) && (temp->right != NULL))//Ìïíï äåîé ğáéäé
+			if((temp->left == NULL) && (temp->right != NULL))//ÄšÄÃ­Ä Ã¤ÄºÃ®Ã© Ä‘Ã¡Ã©Ã¤Ã©
 			{
 				printf("\n19D");
 				(*x)->right = temp->right;
@@ -402,7 +402,7 @@ void delete(tp *x, int data)
 				temp = NULL;
 				return;
 			}
-			if((temp->left != NULL) && (temp->right != NULL))//å÷åé 2 ğáéäéá
+			if((temp->left != NULL) && (temp->right != NULL))//ÄºÃ·ÄºÃ© 2 Ä‘Ã¡Ã©Ã¤Ã©Ã¡
 			{
 				printf("\n20D");
 				tp right = temp->right;
